@@ -1,0 +1,55 @@
+.aboutCss {
+  padding-top: 14vh;
+  background-color: black;
+}
+.aboutCss p {
+  text-align: justify;
+}
+.aboutCss ol {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.aboutTitle {
+  background-image: url(../img/Aboutus.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: black;
+  height: 40vh;
+  padding-top: 15vh;
+}
+.breadcrumb ol {
+  background-color: black !important;
+  font-size: 1.3vw;
+}
+.breadcrumbItem a {
+  color: white;
+}
+.breadcrumbItem a:hover {
+  color: rgb(223, 143, 2);
+}
+.rowHistory {
+  padding-right: 1vw;
+  padding-top: 1vw;
+  margin: 0 !important;
+}
+.imgHistory {
+  padding-left: 1vw;
+}
+.imgFamily {
+  padding-left: 1vw;
+}
+.rowFamily ol {
+  margin: 0 !important;
+}
+.rowFamily {
+  margin: 0 !important;
+}
+.colFamily {
+  margin: 0 !important;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+}
+.colFamily ol {
+  margin: 0 !important;
+}

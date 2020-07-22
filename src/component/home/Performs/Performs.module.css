@@ -1,0 +1,21 @@
+.performsCss {
+  margin-top: 2vw;
+  background-color: black;
+}
+.performsTitle {
+  background-image: url(../../img/Performancebanner.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: black;
+  height: 30vh;
+  padding-top: 15vh;
+}
+.cardGroupCss {
+  padding: 1vw;
+}
+.cardCss {
+  background-color: black;
+  border: none !important;
+  line-height: 1.8;
+  text-align: justify;
+}

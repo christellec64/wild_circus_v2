@@ -1,0 +1,19 @@
+.pricesCss {
+  padding-top: 14vh;
+  color: white;
+}
+.pricesTitle {
+  background-image: url(../img/ticket.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: black;
+  height: 40vh;
+  padding-top: 15vh;
+}
+.tableCss {
+  width: 50% !important;
+  text-align: center;
+  left: 25%;
+  position: relative;
+}

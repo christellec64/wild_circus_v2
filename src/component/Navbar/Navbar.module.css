@@ -1,0 +1,36 @@
+.navBar {
+  height: 14vh;
+  position: fixed !important;
+  padding: 0 !important;
+  background-color: black;
+  z-index: 2;
+  width: 100%;
+}
+
+.logo {
+  padding-left: 1vw;
+}
+.navItem {
+  padding-top: 5vh;
+  padding-left: 8vw;
+  font-size: 1.4vw;
+  text-transform: uppercase;
+}
+.navItem a {
+  color: white;
+}
+.navItem a:hover {
+  color: rgb(223, 143, 2);
+}
+.navFirstItem {
+  padding-top: 5vh;
+  padding-left: 48vw;
+  font-size: 1.4vw;
+  text-transform: uppercase;
+}
+.navFirstItem a {
+  color: white;
+}
+.navFirstItem a:hover {
+  color: rgb(223, 143, 2);
+}

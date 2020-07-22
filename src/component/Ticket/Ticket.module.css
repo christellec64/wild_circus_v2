@@ -1,0 +1,17 @@
+.ticketCss {
+  text-align: center;
+}
+.ticketLink {
+  display: inline-flex;
+  margin-left: 40vw
+}
+.ticketLink h6 {
+  font-size: 2.5vw;
+  color: white;
+  padding-top: 2.2vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+.ticketLink:hover {
+  color: rgb(162, 9, 9);
+}
