@@ -6,3 +6,7 @@
 .footerCss a {
   color: rgb(223, 143, 2);
 }
+.links{
+  margin-left: 2vw;
+  font-size: 1.3vw;
+}

@@ -54,3 +54,13 @@
   border: 0.2vw solid rgb(223, 143, 2);
   background-color: transparent;
 }
+.error {
+  color: rgb(162, 9, 9) !important;
+}
+.success {
+  color: green !important;
+}
+.modal-content {
+  /* background-color: black !important; */
+  border: 0.2vw solid rgb(223, 143, 2) !important;
+}

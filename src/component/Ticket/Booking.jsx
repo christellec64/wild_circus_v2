@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
   Modal,
-  ModalHeader,
   ModalBody,
   ModalFooter,
   Button,
@@ -13,6 +12,8 @@ import {
   FormGroup,
 } from "reactstrap";
 import Axios from "axios";
+
+import styles from "./Booking.module.css";
 
 const host = process.env.REACT_APP_HOST;
 
@@ -116,12 +117,17 @@ function Booking({ setModal, toggle, modal }) {
 
   return (
     <>
-      <Modal isOpen={modal} toggle={toggle}>
-        <ModalHeader toggle={toggle}>Book your ticket !</ModalHeader>
+      <Modal
+        isOpen={modal}
+        toggle={toggle}
+        className={styles.bookingModal}
+        size="lg"
+      >
+        <h5>Book your ticket !</h5>
         <Form onSubmit={handleSubmit}>
           <ModalBody>
             <Row form>
-              <Col xs={{ size: "3", offset: "2" }}>
+              <Col xs={{ size: "4", offset: "1" }}>
                 <Label for="lastname"> Lastname* </Label>
                 <Input
                   type="text"
@@ -133,7 +139,7 @@ function Booking({ setModal, toggle, modal }) {
                   onChange={handleChange}
                 />
               </Col>
-              <Col xs={{ size: "3", offset: "1" }}>
+              <Col xs={{ size: "4", offset: "1" }}>
                 <Label for="firstname"> Firstname* </Label>
                 <Input
                   type="text"
@@ -147,7 +153,7 @@ function Booking({ setModal, toggle, modal }) {
               </Col>
             </Row>
             <Row form>
-              <Col xs={{ size: "7", offset: "2" }}>
+              <Col xs={{ size: "9", offset: "1" }}>
                 <FormGroup>
                   <Label for="email"> Email* </Label>
                   <Input
@@ -163,7 +169,7 @@ function Booking({ setModal, toggle, modal }) {
               </Col>
             </Row>
             <Row form>
-              <Col xs={{ size: "7", offset: "2" }}>
+              <Col xs={{ size: "9", offset: "1" }}>
                 <FormGroup>
                   <Label for="tel"> Phone number* </Label>
                   <Input
@@ -179,7 +185,7 @@ function Booking({ setModal, toggle, modal }) {
               </Col>
             </Row>
             <Row form>
-              <Col xs={{ size: "7", offset: "2" }}>
+              <Col xs={{ size: "9", offset: "1" }}>
                 <FormGroup>
                   <Label for="birthday"> Your Birthday !*</Label>
                   <Input
@@ -194,7 +200,7 @@ function Booking({ setModal, toggle, modal }) {
               </Col>
             </Row>
             <Row form>
-              <Col xs={{ size: "7", offset: "2" }}>
+              <Col xs={{ size: "9", offset: "1" }}>
                 <FormGroup>
                   <Label for="shows"> Select your show !*</Label>
                   <Input
@@ -213,7 +219,7 @@ function Booking({ setModal, toggle, modal }) {
               </Col>
             </Row>
             <Row form>
-              <Col xs={{ size: "7", offset: "2" }}>
+              <Col xs={{ size: "9", offset: "1" }}>
                 <FormGroup>
                   <Label for="category"> Select your category !*</Label>
                   <Input
@@ -232,7 +238,7 @@ function Booking({ setModal, toggle, modal }) {
               </Col>
             </Row>
             <Row form>
-              <Col xs={{ size: "4", offset: "2" }}>
+              <Col xs={{ size: "4", offset: "1" }}>
                 <p>
                   <em>* : required field</em>
                 </p>
@@ -240,7 +246,7 @@ function Booking({ setModal, toggle, modal }) {
             </Row>
             {send ? (
               <Row form>
-                <Col xs={{ size: "6", offset: "3" }}>
+                <Col xs={{ size: "6", offset: "1" }}>
                   <p>You are registered ! Thank you for your booking ! </p>
                 </Col>
               </Row>
@@ -249,8 +255,22 @@ function Booking({ setModal, toggle, modal }) {
             )}
             {error ? (
               <Row form>
-                <Col xs={{ size: "6", offset: "3" }}>
-                  <p>Something bad happened ! Try again please ...</p>
+                <Col xs={{ size: "11", offset: "1" }}>
+                  <p className="error">
+                    Oh no! Something bad happened ! Try again please ...
+                  </p>
+                </Col>
+              </Row>
+            ) : (
+              ""
+            )}
+            {send ? (
+              <Row form>
+                <Col xs={{ size: "11", offset: "1" }}>
+                  <p className="success">
+                    Thank you ! You are registered ! You will receive your
+                    reservation by mail.
+                  </p>
                 </Col>
               </Row>
             ) : (
@@ -258,7 +278,9 @@ function Booking({ setModal, toggle, modal }) {
             )}
           </ModalBody>
           <ModalFooter>
-            <Button type="submit"> Book ! </Button>
+            <Button type="submit" className={styles.bookingSubmit}>
+              Book !
+            </Button>
             <Button onClick={toggle}>Cancel</Button>
           </ModalFooter>
         </Form>

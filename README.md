@@ -1,7 +1,7 @@
 **VARIABLE ENVIRONMENT**
 *please fill those fields to use this app*
 
-- REACT_APP_HOST : server from your back to connect this app
+- REACT_APP_HOST : server from your back to connect this app (ex: http://localhost:8080)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

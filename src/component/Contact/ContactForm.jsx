@@ -149,8 +149,19 @@ function ContactForm() {
         )}
         {error ? (
           <Row form>
-            <Col xs={{ size: "6", offset: "3" }}>
-              <p>Something bad happened ! Try again please ...</p>
+            <Col xs={{ size: "9", offset: "3" }}>
+              <p className="error">
+                Oh no ! Something bad happened ! Try again please ...
+              </p>
+            </Col>
+          </Row>
+        ) : (
+          ""
+        )}
+        {send ? (
+          <Row form>
+            <Col xs={{ size: "9", offset: "3" }}>
+              <p className="success">Your message has been sent !</p>
             </Col>
           </Row>
         ) : (

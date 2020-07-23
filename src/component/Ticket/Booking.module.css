@@ -1,0 +1,40 @@
+.bookingModal h5 {
+  color: rgb(162, 9, 9);
+  font-weight: 600;
+  font-size: 1.5vw;
+  padding: 1vw 0 0 2vw;
+  margin: 0;
+}
+.bookingModal label {
+  color: rgb(223, 143, 2);
+  font-weight: 600;
+  margin: 0;
+}
+.bookingModal input {
+  margin-bottom: 1vw;
+}
+.bookingModal em {
+  color: black;
+}
+.bookingModal button {
+  border: 0.2vw solid rgb(162, 9, 9);
+  background-color: rgb(162, 9, 9);
+  width: 8vw;
+}
+.bookingModal button:hover {
+  border: 0.2vw solid rgb(223, 143, 2);
+  background-color: rgb(162, 9, 9);
+}
+
+.bookingSubmit {
+  border: 0.2vw solid rgb(223, 143, 2) !important;
+  background-color: transparent !important;
+  width: 8vw;
+  margin-bottom: 1.5vw;
+  color: black !important;
+}
+.bookingSubmit:hover {
+  border: 0.2vw solid rgb(162, 9, 9) !important;
+  background-color: transparent;
+  color: black !important;
+}
