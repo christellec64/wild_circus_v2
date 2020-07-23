@@ -1,9 +1,39 @@
-import React from "react";
-import styles from "./Home.module.css";
-import Performs from "./Performs/Performs";
+import React, { useState, useEffect } from "react";
+import Axios from "axios";
 import { Container, Row, Col } from "reactstrap";
 
+import styles from "./Home.module.css";
+import Performs from "./Performs/Performs";
+
+const host = process.env.REACT_APP_HOST;
+
 function Home() {
+  const [show, setShow] = useState([]);
+  const [error, setError] = useState("");
+
+  const getShow = async () => {
+    try {
+      const res = await Axios.get(`${host}/api/shows`);
+      const orderedbyDate = res.data.sort((a, b) => {
+        if (a.show_date < b.show_date) {
+          return -1;
+        } else if (a.show_date > b.show_date) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+      const getNextShow = orderedbyDate.shift();
+      setShow(getNextShow);
+    } catch (err) {
+      setError(err);
+      return error;
+    }
+  };
+
+  useEffect(() => {
+    getShow();
+  }, []);
   return (
     <div className={styles.homeCss}>
       <h1 className={styles.homeBanner}>
@@ -27,11 +57,10 @@ function Home() {
           <Col>
             <h3>The Next Show</h3>
             <p>
-              It's a pleasure to present you our Wild Circus Shows in Biarritz
-              in Basque country (France) ! A wonderful region in South of
-              France, famous for its beautiful landscapes, XXXXXXXXX Don't waste
-              time ! Book right now !
+              It's a pleasure to present you our <b> {show.title} </b> in{" "}
+              <b>{show.localisation}</b> the <b>{show.show_date}</b> !
             </p>
+            <p>Don't wait any longer ! Book right now !</p>
           </Col>
         </Row>
       </Container>

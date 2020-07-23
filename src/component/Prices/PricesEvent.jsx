@@ -13,7 +13,16 @@ function PricesEvent() {
   const getShows = async () => {
     try {
       const res = await Axios.get(`${host}/api/shows`);
-      setShows(res.data);
+      const orderedbyDate = res.data.sort((a, b) => {
+        if (a.show_date < b.show_date) {
+          return -1;
+        } else if (a.show_date > b.show_date) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+      setShows(orderedbyDate);
     } catch (err) {
       setError(err);
       return error;

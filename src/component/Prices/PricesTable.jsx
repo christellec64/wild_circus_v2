@@ -13,8 +13,8 @@ function PricesTable() {
   const getTickets = async () => {
     try {
       const res = await axios.get(`${host}/api/tickets`);
-      console.log(res.data);
-      setTicket(res.data);
+      const orderedbyPrice = res.data.sort((a, b) => a.price - b.price);
+      setTicket(orderedbyPrice);
     } catch (err) {
       setError(err);
       return error;
@@ -34,7 +34,7 @@ function PricesTable() {
       <Table className={styles.tableCss} bordered>
         <thead className={styles.tableHead}>
           <tr>
-            <th>Category</th>
+            <th>Categories</th>
             <th>Prices</th>
           </tr>
         </thead>
