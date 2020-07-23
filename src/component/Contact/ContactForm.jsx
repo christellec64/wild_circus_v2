@@ -138,15 +138,6 @@ function ContactForm() {
             </p>
           </Col>
         </Row>
-        {send ? (
-          <Row form>
-            <Col xs={{ size: "6", offset: "3" }}>
-              <p>Your message has been sent !</p>
-            </Col>
-          </Row>
-        ) : (
-          ""
-        )}
         {error ? (
           <Row form>
             <Col xs={{ size: "9", offset: "3" }}>

@@ -57,7 +57,7 @@ function Booking({ setModal, toggle, modal }) {
     } else if (e.target.id === "firstname") {
       setFirstname(e.target.value);
     } else if (e.target.id === "email") {
-      setEmail(e.target.valus);
+      setEmail(e.target.value);
     } else if (e.target.id === "tel") {
       setTel(e.target.value);
     } else if (e.target.id === "birthday") {
@@ -71,14 +71,6 @@ function Booking({ setModal, toggle, modal }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await Axios.post(`${host}/api/clients`, {
-        lastname,
-        firstname,
-        email,
-        tel,
-        birthday,
-        ShowId: selectShow.id,
-      });
       await Axios.post(`${host}/api/booking`, {
         lastname,
         firstname,
@@ -88,16 +80,6 @@ function Booking({ setModal, toggle, modal }) {
         selectCategory,
         selectShow,
       });
-
-      console.log(
-        lastname,
-        firstname,
-        email,
-        tel,
-        birthday,
-        selectCategory,
-        selectShow
-      );
       setSend(true);
       setLastname("");
       setFirstname("");
@@ -244,15 +226,6 @@ function Booking({ setModal, toggle, modal }) {
                 </p>
               </Col>
             </Row>
-            {send ? (
-              <Row form>
-                <Col xs={{ size: "6", offset: "1" }}>
-                  <p>You are registered ! Thank you for your booking ! </p>
-                </Col>
-              </Row>
-            ) : (
-              ""
-            )}
             {error ? (
               <Row form>
                 <Col xs={{ size: "11", offset: "1" }}>
