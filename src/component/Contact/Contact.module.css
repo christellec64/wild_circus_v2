@@ -1,0 +1,39 @@
+.contactCss {
+  padding-top: 15vh;
+}
+.contactTitle {
+  background-image: url(../img/contactusbanner.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: black;
+  height: 30vh;
+  padding-top: 15vh;
+}
+.contactRow {
+  width: 100%;
+  height: 40vh;
+  margin-bottom: 2vw;
+}
+.contactCol {
+  padding: 0 !important;
+}
+.contactColAddress {
+  padding-left: 2vw !important;
+}
+.contactPwcs {
+  margin-bottom: 0;
+}
+.contactFormCss label {
+  font-size: 1.1vw;
+  margin-bottom: 1vw;
+}
+.contactFormCss input {
+  margin-bottom: 1vw;
+}
+.contactEmail {
+  padding-left: 1vw;
+  color: white;
+}
+.contactEmail:hover {
+  color: rgb(223, 143, 2);
+}

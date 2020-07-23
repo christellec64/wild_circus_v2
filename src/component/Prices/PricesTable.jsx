@@ -28,11 +28,11 @@ function PricesTable() {
   return (
     <>
       <h3>Table Prices</h3>
-      <p>
+      <p className={styles.tableEm}>
         <em>All prices are including Taxes and for one person only</em>
       </p>
       <Table className={styles.tableCss} bordered>
-        <thead>
+        <thead className={styles.tableHead}>
           <tr>
             <th>Category</th>
             <th>Prices</th>
@@ -41,7 +41,7 @@ function PricesTable() {
         <tbody>
           {ticket.map((ticket) => {
             return (
-              <tr>
+              <tr className={styles.tableTh}>
                 <th>{ticket.label}</th>
                 <th>{ticket.price} euros</th>
               </tr>
@@ -49,6 +49,7 @@ function PricesTable() {
           })}
         </tbody>
       </Table>
+      <hr />
     </>
   );
 }

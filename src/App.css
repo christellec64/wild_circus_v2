@@ -41,3 +41,16 @@
 .App b {
   color: rgb(223, 143, 2);
 }
+.App label {
+  color: rgb(223, 143, 2);
+}
+.App button {
+  border: 0.2vw solid rgb(162, 9, 9);
+  background-color: transparent;
+  width: 8vw;
+  margin-bottom: 1.5vw;
+}
+.App button:hover {
+  border: 0.2vw solid rgb(223, 143, 2);
+  background-color: transparent;
+}
