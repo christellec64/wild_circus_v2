@@ -226,7 +226,7 @@ function Booking({ setModal, toggle, modal }) {
                 </p>
               </Col>
             </Row>
-            {error ? (
+            {/* {error ? (
               <Row form>
                 <Col xs={{ size: "11", offset: "1" }}>
                   <p className="error">
@@ -248,7 +248,7 @@ function Booking({ setModal, toggle, modal }) {
               </Row>
             ) : (
               ""
-            )}
+            )} */}
           </ModalBody>
           <ModalFooter>
             <Button type="submit" className={styles.bookingSubmit}>
