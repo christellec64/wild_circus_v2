@@ -31,7 +31,7 @@ function PricesEvent() {
 
   useEffect(() => {
     getShows();
-  }, []);
+  });
 
   return (
     <div className={styles.pricesTableEventCss}>
