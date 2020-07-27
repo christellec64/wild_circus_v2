@@ -4,7 +4,7 @@ import { Table } from "reactstrap";
 
 import styles from "./Prices.module.css";
 
-const host = process.env.REACT_APP_HOST;
+import API_URL from "../../ApiUrl";
 
 function PricesTable() {
   const [ticket, setTicket] = useState([]);
@@ -12,7 +12,7 @@ function PricesTable() {
 
   const getTickets = async () => {
     try {
-      const res = await axios.get(`${host}/api/tickets`);
+      const res = await axios.get(`${API_URL}/api/tickets`);
       const orderedbyPrice = res.data.sort((a, b) => a.price - b.price);
       setTicket(orderedbyPrice);
     } catch (err) {

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Row, Col, Form, FormGroup, Label, Input, Button } from "reactstrap";
-
-import styles from "./Contact.module.css";
 import Axios from "axios";
 
-const host = process.env.REACT_APP_HOST;
+import styles from "./Contact.module.css";
+import { API_URL } from "../../ApiUrl";
 
 function ContactForm() {
   const [lastname, setLastname] = useState("");
@@ -34,7 +33,7 @@ function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await Axios.post(`${host}/api/contact`, {
+      await Axios.post(`${API_URL}/api/contact`, {
         lastname,
         firstname,
         email,

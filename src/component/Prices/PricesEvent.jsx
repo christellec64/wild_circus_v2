@@ -3,8 +3,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./Prices.module.css";
 import { Table } from "reactstrap";
 import Axios from "axios";
-
-const host = process.env.REACT_APP_HOST;
+import { API_URL } from "../../ApiUrl";
 
 function PricesEvent() {
   const [shows, setShows] = useState([]);
@@ -12,7 +11,7 @@ function PricesEvent() {
 
   const getShows = async () => {
     try {
-      const res = await Axios.get(`${host}/api/shows`);
+      const res = await Axios.get(`${API_URL}/api/shows`);
       const orderedbyDate = res.data.sort((a, b) => {
         if (a.show_date < b.show_date) {
           return -1;
