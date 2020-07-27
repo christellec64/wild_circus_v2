@@ -68,8 +68,7 @@ function Booking({ setModal, toggle, modal }) {
       setSelectCategory(e.target.value);
     }
   };
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
     try {
       await Axios.post(`${host}/api/booking`, {
         lastname,
