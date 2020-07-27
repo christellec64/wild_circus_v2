@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import { Container, Row, Col } from "reactstrap";
@@ -33,7 +34,6 @@ function Home() {
 
   useEffect(() => {
     getShow();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div className={styles.homeCss}>
