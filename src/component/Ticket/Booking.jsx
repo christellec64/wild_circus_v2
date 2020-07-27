@@ -14,8 +14,7 @@ import {
 import Axios from "axios";
 
 import styles from "./Booking.module.css";
-
-const host = process.env.REACT_APP_HOST;
+import { API_URL } from "../../ApiUrl";
 
 function Booking({ setModal, toggle, modal }) {
   const [lastname, setLastname] = useState("");
@@ -72,7 +71,7 @@ function Booking({ setModal, toggle, modal }) {
   };
   const handleSubmit = async () => {
     try {
-      await Axios.post(`${host}/api/booking`, {
+      await Axios.post(`${API_URL}/api/booking`, {
         lastname,
         firstname,
         email,
