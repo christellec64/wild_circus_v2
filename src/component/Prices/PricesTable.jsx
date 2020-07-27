@@ -10,19 +10,20 @@ function PricesTable() {
   const [ticket, setTicket] = useState([]);
   const [error, setError] = useState("");
 
+  const getTickets = async () => {
+    try {
+      const res = await axios.get(`${host}/api/tickets`);
+      const orderedbyPrice = res.data.sort((a, b) => a.price - b.price);
+      setTicket(orderedbyPrice);
+    } catch (err) {
+      setError(err);
+      return error;
+    }
+  };
   useEffect(() => {
-    const getTickets = async () => {
-      try {
-        const res = await axios.get(`${host}/api/tickets`);
-        const orderedbyPrice = res.data.sort((a, b) => a.price - b.price);
-        setTicket(orderedbyPrice);
-      } catch (err) {
-        setError(err);
-        return error;
-      }
-    };
     getTickets();
-  }, [error]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
