@@ -10,26 +10,27 @@ function PricesEvent() {
   const [shows, setShows] = useState([]);
   const [error, setError] = useState("");
 
-  const getShows = async () => {
-    try {
-      const res = await Axios.get(`${host}/api/shows`);
-      const orderedbyDate = res.data.sort((a, b) => {
-        if (a.show_date < b.show_date) {
-          return -1;
-        } else if (a.show_date > b.show_date) {
-          return 1;
-        } else {
-          return 0;
-        }
-      });
-      setShows(orderedbyDate);
-    } catch (err) {
-      setError(err);
-      return error;
-    }
-  };
-
-  useEffect(getShows(), []);
+  useEffect(() => {
+    const getShows = async () => {
+      try {
+        const res = await Axios.get(`${host}/api/shows`);
+        const orderedbyDate = res.data.sort((a, b) => {
+          if (a.show_date < b.show_date) {
+            return -1;
+          } else if (a.show_date > b.show_date) {
+            return 1;
+          } else {
+            return 0;
+          }
+        });
+        setShows(orderedbyDate);
+      } catch (err) {
+        setError(err);
+        return error;
+      }
+    };
+    getShows();
+  }, [error]);
 
   return (
     <div className={styles.pricesTableEventCss}>

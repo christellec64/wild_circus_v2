@@ -11,28 +11,29 @@ function Home() {
   const [show, setShow] = useState([]);
   const [error, setError] = useState("");
 
-  const getShow = async () => {
-    try {
-      const res = await Axios.get(`${host}/api/shows`);
-      const orderedbyDate = res.data.sort((a, b) => {
-        if (a.show_date < b.show_date) {
-          return -1;
-        } else if (a.show_date > b.show_date) {
-          return 1;
-        } else {
-          return 0;
-        }
-      });
-      const getNextShow = orderedbyDate.shift();
-      setShow(getNextShow);
-    } catch (err) {
-      setError(err);
-      return error;
-    }
-  };
+  useEffect(() => {
+    const getShow = async () => {
+      try {
+        const res = await Axios.get(`${host}/api/shows`);
+        const orderedbyDate = res.data.sort((a, b) => {
+          if (a.show_date < b.show_date) {
+            return -1;
+          } else if (a.show_date > b.show_date) {
+            return 1;
+          } else {
+            return 0;
+          }
+        });
+        const getNextShow = orderedbyDate.shift();
+        setShow(getNextShow);
+      } catch (err) {
+        setError(err);
+        return error;
+      }
+    };
+    getShow();
+  }, [error]);
 
-  useEffect(getShow(), []);
-  
   return (
     <div className={styles.homeCss}>
       <h1 className={styles.homeBanner}>
