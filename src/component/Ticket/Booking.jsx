@@ -64,10 +64,10 @@ function Booking({ setModal, toggle, modal }) {
     } else if (e.target.id === "category") {
       setSelectCategory(e.target.value);
     } else {
-      return send;
     }
   };
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
       await Axios.post(`${API_URL}/api/booking`, {
         lastname,
@@ -103,7 +103,6 @@ function Booking({ setModal, toggle, modal }) {
         size="lg"
       >
         <h5>Book your ticket !</h5>
-        {error ? "" : ""}
         <Form onSubmit={handleSubmit}>
           <ModalBody>
             <Row form>
@@ -224,7 +223,7 @@ function Booking({ setModal, toggle, modal }) {
                 </p>
               </Col>
             </Row>
-            {/* {error ? (
+            {error ? (
               <Row form>
                 <Col xs={{ size: "11", offset: "1" }}>
                   <p className="error">
@@ -246,7 +245,7 @@ function Booking({ setModal, toggle, modal }) {
               </Row>
             ) : (
               ""
-            )} */}
+            )}
           </ModalBody>
           <ModalFooter>
             <Button type="submit" className={styles.bookingSubmit}>
