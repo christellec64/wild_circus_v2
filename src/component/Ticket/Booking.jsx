@@ -35,7 +35,6 @@ function Booking({ setModal, toggle, modal }) {
       setShow(res.data);
     } catch (err) {
       setError(err);
-      return error;
     }
   };
   const getAllTickets = async () => {
@@ -44,7 +43,6 @@ function Booking({ setModal, toggle, modal }) {
       setCategory(res.data);
     } catch (err) {
       setError(err);
-      return error;
     }
   };
 
@@ -89,13 +87,12 @@ function Booking({ setModal, toggle, modal }) {
       setSelectShow("");
     } catch (err) {
       setError(err);
-      return error;
     }
   };
   useEffect(() => {
     getAllShows();
     getAllTickets();
-  });
+  }, []);
 
   return (
     <>
@@ -106,6 +103,7 @@ function Booking({ setModal, toggle, modal }) {
         size="lg"
       >
         <h5>Book your ticket !</h5>
+        {error ? "" : ""}
         <Form onSubmit={handleSubmit}>
           <ModalBody>
             <Row form>

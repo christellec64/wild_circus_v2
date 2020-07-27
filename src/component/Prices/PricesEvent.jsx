@@ -8,6 +8,7 @@ import { API_URL } from "../../ApiUrl";
 function PricesEvent() {
   const [shows, setShows] = useState([]);
   const [error, setError] = useState("");
+  const [showId, setShowId] = useState(0);
 
   const getShows = async () => {
     try {
@@ -22,6 +23,7 @@ function PricesEvent() {
         }
       });
       setShows(orderedbyDate);
+      setShowId("");
     } catch (err) {
       setError(err);
     }
@@ -29,7 +31,7 @@ function PricesEvent() {
 
   useEffect(() => {
     getShows();
-  }, []);
+  }, [showId]);
 
   return (
     <div className={styles.pricesTableEventCss}>
