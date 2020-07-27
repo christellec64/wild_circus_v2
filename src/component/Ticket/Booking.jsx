@@ -66,6 +66,8 @@ function Booking({ setModal, toggle, modal }) {
       setSelectShow(e.target.value);
     } else if (e.target.id === "category") {
       setSelectCategory(e.target.value);
+    } else {
+      return send;
     }
   };
   const handleSubmit = async () => {
@@ -94,7 +96,7 @@ function Booking({ setModal, toggle, modal }) {
   useEffect(() => {
     getAllShows();
     getAllTickets();
-  }, []);
+  });
 
   return (
     <>
