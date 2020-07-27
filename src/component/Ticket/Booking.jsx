@@ -31,7 +31,7 @@ function Booking({ setModal, toggle, modal }) {
 
   const getAllShows = async () => {
     try {
-      const res = await Axios.get(`${host}/api/shows`);
+      const res = await Axios.get(`${API_URL}/api/shows`);
       setShow(res.data);
     } catch (err) {
       setError(err);
@@ -40,7 +40,7 @@ function Booking({ setModal, toggle, modal }) {
   };
   const getAllTickets = async () => {
     try {
-      const res = await Axios.get(`${host}/api/tickets`);
+      const res = await Axios.get(`${API_URL}/api/tickets`);
       setCategory(res.data);
     } catch (err) {
       setError(err);
