@@ -4,7 +4,7 @@ import { Table } from "reactstrap";
 
 import styles from "./Prices.module.css";
 
-import API_URL from "../../ApiUrl";
+import { API_URL } from "../../ApiUrl";
 
 function PricesTable() {
   const [ticket, setTicket] = useState([]);
