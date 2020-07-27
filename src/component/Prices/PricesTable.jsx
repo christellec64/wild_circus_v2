@@ -21,9 +21,7 @@ function PricesTable() {
     }
   };
 
-  useEffect(() => {
-    getTickets();
-  });
+  useEffect(getTickets(), []);
 
   return (
     <>

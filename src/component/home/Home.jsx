@@ -31,9 +31,8 @@ function Home() {
     }
   };
 
-  useEffect(() => {
-    getShow();
-  });
+  useEffect(getShow(), []);
+  
   return (
     <div className={styles.homeCss}>
       <h1 className={styles.homeBanner}>
