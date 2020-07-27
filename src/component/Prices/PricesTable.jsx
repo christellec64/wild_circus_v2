@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Table } from "reactstrap";
@@ -18,7 +17,6 @@ function PricesTable() {
       setTicket(orderedbyPrice);
     } catch (err) {
       setError(err);
-      return error;
     }
   };
   useEffect(() => {
@@ -28,6 +26,7 @@ function PricesTable() {
   return (
     <>
       <h3>Table Prices</h3>
+      {error ? "" : ""}
       <p className={styles.tableEm}>
         <em>All prices are including Taxes and for one person only</em>
       </p>

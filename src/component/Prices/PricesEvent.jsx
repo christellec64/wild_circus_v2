@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 
 import styles from "./Prices.module.css";
@@ -26,7 +25,6 @@ function PricesEvent() {
       setShows(orderedbyDate);
     } catch (err) {
       setError(err);
-      return error;
     }
   };
 
@@ -37,6 +35,7 @@ function PricesEvent() {
   return (
     <div className={styles.pricesTableEventCss}>
       <h3>Upcoming Events</h3>
+      {error ? "" : " "}
       <p className={styles.tableEm}>
         <em>
           All events are started at 20:00 PM. You can buy tickets on-site. We

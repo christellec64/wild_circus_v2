@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import { Container, Row, Col } from "reactstrap";
@@ -28,19 +27,20 @@ function Home() {
       setShow(getNextShow);
     } catch (err) {
       setError(err);
-      return error;
     }
   };
 
   useEffect(() => {
     getShow();
   }, []);
+
   return (
     <div className={styles.homeCss}>
       <h1 className={styles.homeBanner}>
         Wild Circus <br />
         Go Wild For a While
       </h1>
+      {error ? "" : ""}
       <Container>
         <Row>
           <Col>
